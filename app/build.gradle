@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.edo1.guessify1'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.edo1.guessify1"
@@ -37,4 +37,10 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    implementation libs.auth // Maven dependency
+
+    // All other dependencies for your app should also be here:
+    implementation 'androidx.browser:browser:1.0.0'
+
 }

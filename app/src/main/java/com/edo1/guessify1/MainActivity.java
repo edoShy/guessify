@@ -7,36 +7,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.spotify.sdk.android.auth.AuthorizationClient;
 import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    // הגדרות חובה (תחליף במספרים שלך!)
-    private static final String CLIENT_ID = "155e7ecccd1c47919e2bdddce534dd61";
-    private static final String REDIRECT_URI = "guessify://callback";
     private static final int REQUEST_CODE = 1337;
+    private LoginViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+  viewModel=new ViewModelProvider(this).get(LoginViewModel.class);
 
         Button btnConnect = findViewById(R.id.btnConnect);
 
         btnConnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // פותח את ספוטיפיי
-                AuthorizationRequest.Builder builder =
-                        new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
 
-                builder.setScopes(new String[]{"user-top-read"});
-                builder.setShowDialog(true);
-
-                AuthorizationRequest request = builder.build();
-
-                AuthorizationClient.openLoginActivity(MainActivity.this, REQUEST_CODE, request);
+                AuthorizationClient.openLoginActivity(MainActivity.this, REQUEST_CODE, viewModel.getLoginRequest());
             }
         });
     }

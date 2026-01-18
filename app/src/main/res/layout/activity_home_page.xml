@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="#121212"> <TextView
+    android:id="@+id/tvWelcome"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="שלום..."
+    android:textColor="#FFFFFF"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="40dp"
+    android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnTopSongs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5 השירים המושמעים ביותר"
+        android:backgroundTint="#1DB954"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnTopArtists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10 האומנים המושמעים ביותר"
+        android:backgroundTint="#1DB954"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnListeningMinutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="דקות השמעה"
+        android:backgroundTint="#1DB954"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnGuessingGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="משחק הניחושים"
+        android:backgroundTint="#1DB954"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnRateSongs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="דירוג שירים"
+        android:backgroundTint="#1DB954"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

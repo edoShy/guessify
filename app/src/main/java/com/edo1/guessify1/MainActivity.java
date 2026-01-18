@@ -49,11 +49,21 @@ public class MainActivity extends AppCompatActivity {
                     // הצלחה!
                     Log.d("Spotify", "הטוקן הוא: " + response.getAccessToken());
                     Toast.makeText(this, "התחברת בהצלחה!", Toast.LENGTH_SHORT).show();
-                    break;
 
-                case ERROR:
-                    // כישלון
-                    Toast.makeText(this, "שגיאה: " + response.getError(), Toast.LENGTH_SHORT).show();
+                    // --- הקוד החדש מתחיל כאן ---
+                    // אנחנו יוצרים "כוונה" (Intent) לעבור למסך הבית
+                    Intent intentToHome = new Intent(MainActivity.this, HomePageActivity.class);
+
+                    // אנחנו שולחים את הטוקן למסך הבא כדי שיוכל להשתמש בו
+                    intentToHome.putExtra("ACCESS_TOKEN", response.getAccessToken());
+
+                    // הפעלת המסך הבא
+                    startActivity(intentToHome);
+
+                    // סגירת המסך הנוכחי (כדי שאם יעשו "אחורה" לא יחזרו למסך התחברות)
+                    finish();
+                    // --- הקוד החדש נגמר כאן ---
+
                     break;
             }
         }

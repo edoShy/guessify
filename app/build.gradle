@@ -43,5 +43,6 @@ dependencies {
     // All other dependencies for your app should also be here:
     implementation 'androidx.browser:browser:1.0.0'
     implementation("com.spotify.android:auth:1.2.6")
+    implementation 'androidx.browser:browser:1.2.0'
 
 }

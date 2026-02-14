@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-  viewModel=new ViewModelProvider(this).get(LoginViewModel.class);
+        viewModel=new ViewModelProvider(this).get(LoginViewModel.class);
 
         Button btnConnect = findViewById(R.id.btnConnect);
 

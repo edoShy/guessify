@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center_horizontal">
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="שלום!"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="מה תרצה לעשות היום?"
+        android:text="המוזיקה שלך מחכה לך"
         android:textColor="#B3B3B3"
         android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnTopArtists"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTopArtists"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="10 האמנים המובילים"
-            android:backgroundTint="#282828"
-            android:layout_marginBottom="15dp" />
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#282828"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+            <RelativeLayout android:padding="20dp" android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="האמנים המובילים" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" android:layout_centerVertical="true"/>
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_view" android:layout_alignParentEnd="true" app:tint="#1DB954"/>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
-            android:id="@+id/btnTopSongs"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTopSongs"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="5 השירים המובילים"
-            android:backgroundTint="#282828"
-            android:layout_marginBottom="15dp" />
-
-
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#282828"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+            <RelativeLayout android:padding="20dp" android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="השירים המובילים" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" android:layout_centerVertical="true"/>
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_media_play" android:layout_alignParentEnd="true" app:tint="#1DB954"/>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </LinearLayout>

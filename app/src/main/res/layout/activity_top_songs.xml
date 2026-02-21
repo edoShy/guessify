@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp">
+        android:layout_height="160dp"
+        android:background="#191414"
+        android:padding="20dp">
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="חזרה"
-            android:tint="#FFFFFF"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"/>
+            app:tint="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="TOP SONGS"
+            android:layout_alignParentBottom="true"
+            android:text="השירים שלך"
             android:textColor="#1DB954"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.1" />
+            android:textSize="32sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:padding="16dp"
         android:gravity="center"
-        android:layout_marginBottom="24dp">
-        <Button android:id="@+id/btnShort" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="חודש" android:backgroundTint="#282828" android:layout_marginEnd="4dp"/>
-        <Button android:id="@+id/btnMedium" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="חצי שנה" android:backgroundTint="#282828" android:layout_marginEnd="4dp"/>
-        <Button android:id="@+id/btnLong" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="תמיד" android:backgroundTint="#282828"/>
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnShort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="חודש" android:layout_margin="4dp" android:backgroundTint="#282828" app:cornerRadius="20dp"/>
+        <Button android:id="@+id/btnMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="חצי שנה" android:layout_margin="4dp" android:backgroundTint="#282828" app:cornerRadius="20dp"/>
+        <Button android:id="@+id/btnLong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="תמיד" android:layout_margin="4dp" android:backgroundTint="#282828" app:cornerRadius="20dp"/>
     </LinearLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
         <TextView
             android:id="@+id/tvSongsList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="16dp"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:lineSpacingExtra="12dp" />
-    </ScrollView>
+            android:lineSpacingExtra="15dp" />
+    </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

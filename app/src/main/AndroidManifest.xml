@@ -11,26 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessify1">
+        <activity android:name=".TopSongsActivity" android:exported="false" />
 
-        <activity android:name=".TopSongsActivity" />
         <activity android:name=".TopArtistsActivity" />
         <activity android:name=".HomePageActivity" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="callback"
                     android:scheme="guessify" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
